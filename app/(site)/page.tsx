@@ -27,13 +27,6 @@ export default async function Homepage() {
         <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
         below to view a post in the collection.
       </p>
-      
-      <h2>Recent Posts</h2>
-      <div>
-        {postsWithExcerpts.map(post => (
-          <PostPreview key={post.slug} {...post} />
-        ))}
-      </div>
     </div>
   );
 }
