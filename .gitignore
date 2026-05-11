@@ -1,0 +1,28 @@
+node_modules/
+dist/
+.vercel/
+.next/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+npm-debug.log*
+
+# Package manager cache / temp
+.pnpm-store/
+.yarn/
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# TypeScript
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
