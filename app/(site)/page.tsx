@@ -1,9 +1,23 @@
-import Link from 'next/link';
 import { reader } from '../reader';
+import { PostPreview } from '../../components/post-preview';
+import { getExcerpt } from '../../utils/markdoc';
 import '../styles.css';
 
 export default async function Homepage() {
   const posts = await reader.collections.posts.all();
+
+  // Resolve content and excerpts for all posts
+  const postsWithExcerpts = await Promise.all(
+    posts.map(async (post) => {
+      const { node } = await post.entry.content();
+      const excerpt = getExcerpt(node);
+      return {
+        slug: post.slug,
+        title: post.entry.title,
+        excerpt,
+      };
+    })
+  );
 
   return (
     <div>
@@ -13,17 +27,13 @@ export default async function Homepage() {
         <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
         below to view a post in the collection.
       </p>
-      <p>
-        <Link href="/posts">View all posts</Link>
-      </p>
-      <h2>Posts</h2>
-      <ul>
-        {posts.map(post => (
-          <li key={post.slug}>
-            <Link href={`/${post.slug}`}>{post.entry.title}</Link>
-          </li>
+      
+      <h2>Recent Posts</h2>
+      <div>
+        {postsWithExcerpts.map(post => (
+          <PostPreview key={post.slug} {...post} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
