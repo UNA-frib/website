@@ -11,7 +11,7 @@
 }
 
 html {
-  background-color: var(--bg-white);
+  background-color: #4c968f;
   color: var(--text-main);
   font-family: var(--font-sans);
   line-height: 1.6;
