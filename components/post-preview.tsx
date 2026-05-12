@@ -23,8 +23,8 @@ export function PostPreview({ slug, title, excerpt }: PostPreviewProps) {
       }}>
         {excerpt}
       </p>
-      <Link href={`/${slug}`} style={{ color: '#0070f3', fontWeight: '500' }}>
-        Lire l'article
+      <Link href={`/posts/${slug}`} style={{ color: '#0070f3', fontWeight: '500' }}>
+        Read more →
       </Link>
     </article>
   );
