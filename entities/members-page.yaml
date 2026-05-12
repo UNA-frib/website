@@ -1,4 +1,6 @@
 members:
   - firstName: erferf
     lastName: fwefew
-    profilePicture: /images/members/0/profilePicture.png
+    profilePicture: /images/members/members/0/profilePicture.png
+  - firstName: Unknown
+    lastName: Person
