@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.navbar a {
+  font-weight: 500;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: var(--primary);
+}

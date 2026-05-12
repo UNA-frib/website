@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Navbar } from '../../components/navbar';
+import { Navbar } from '../../components/navbar/navbar';
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
   return (

@@ -1,0 +1,36 @@
+.postPreview {
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-white);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.postPreview:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-border);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
+}
+
+.postPreview h3 {
+  margin: 0 0 0.75rem 0;
+  color: #0c4a6e;
+}
+
+.postPreview p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.readMore {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}

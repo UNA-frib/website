@@ -3,6 +3,7 @@ import React from 'react';
 import Markdoc from '@markdoc/markdoc';
 import { reader } from '../../../reader';
 import { markdocConfig } from '../../../../keystatic.config';
+import { ResponsiveImage } from '../../../../components/profilePicture/profile-picture';
 
 export default async function Post(props: {
   params: Promise<{ slug: string }>;
@@ -27,7 +28,11 @@ export default async function Post(props: {
   return (
     <div>
       <h1>{post.title}</h1>
-      {Markdoc.renderers.react(renderable, React)}
+      {Markdoc.renderers.react(renderable, React, {
+        components: {
+          Image: ResponsiveImage,
+        }
+      })}
     </div>
   );
 }
