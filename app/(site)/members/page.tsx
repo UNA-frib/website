@@ -4,9 +4,7 @@ import '../../styles.css';
 export default async function MembersPage() {
   const membersData = await reader.singletons.members.read();
 
-  if (!membersData) {
-    return <div>No members found.</div>;
-  }
+  if (!membersData) return <div>No members found.</div>;
 
   return (
     <div>

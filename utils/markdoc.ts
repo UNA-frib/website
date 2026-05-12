@@ -17,9 +17,8 @@ export function getExcerpt(node: Node, wordLimit: number = 25): string {
   walk(node);
 
   const words = text.trim().split(/\s+/);
-  if (words.length <= wordLimit) {
-    return text.trim();
-  }
+  
+  if (words.length <= wordLimit) return text.trim();
 
   return words.slice(0, wordLimit).join(' ') + '...';
 }
