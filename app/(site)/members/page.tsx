@@ -27,7 +27,7 @@ export default async function MembersPage() {
                 No Photo
               </div>
             )} */}
-            <ProfilePicture src={member.profilePicture} alt={`${member.firstName} ${member.lastName}`} />
+            <ProfilePicture src={member.profilePicture} alt={member.profilePicture ? `${member.firstName} ${member.lastName}` : ''} />
             <h3 style={{ margin: 0 }}>{member.firstName} {member.lastName}</h3>
           </div>
         ))}

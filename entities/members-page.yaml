@@ -1,6 +1,6 @@
 members:
+  - firstName: unk
+    lastName: nown
   - firstName: Quentin
     lastName: Brechbuehl
-    profilePicture: /images/members/members/0/profilePicture.png
-  - firstName: Unknown
-    lastName: Person
+    profilePicture: /images/members/members/1/profilePicture.png

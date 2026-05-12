@@ -9,7 +9,7 @@ export function ProfilePicture({ src, alt }: ProfilePictureProps) {
   return (
     <img 
       src={src || '/images/members/default_pp.jpg'} 
-      alt={alt || src ? 'Profile Picture' : 'Default Profile Picture'} 
+      alt={alt || ''} 
       className={styles.memberPhoto} 
     />
   );

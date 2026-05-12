@@ -1,12 +1,4 @@
 {
-  "name": "@keystatic/templates-nextjs",
-  "version": "0.0.64",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Thinkmill/keystatic/",
-    "directory": "templates/nextjs"
-  },
   "dependencies": {
     "@keystatic/core": "^0.5.50",
     "@keystatic/next": "^5.0.4",

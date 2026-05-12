@@ -1,11 +1,12 @@
+/* TODO see if we can pass the global style to the layout */
 :root {
-  --primary: #0284c7; /* Sky 600 */
-  --primary-light: #f0f9ff; /* Sky 50 */
-  --primary-border: #bae6fd; /* Sky 200 */
-  --text-main: #1f2937; /* Gray 800 */
-  --text-muted: #4b5563; /* Gray 600 */
+  --primary: #0284c7; 
+  --primary-light: #f0f9ff;
+  --primary-border: #bae6fd; 
+  --text-main: #1f2937; 
+  --text-muted: #4b5563; 
   --bg-white: #ffffff;
-  --border-color: #e5e7eb; /* Gray 200 */
+  --border-color: #e5e7eb; 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -24,7 +25,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  color: #0c4a6e; /* Sky 900 */
+  color: #0c4a6e; 
   line-height: 1.2;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
