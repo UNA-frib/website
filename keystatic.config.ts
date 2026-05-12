@@ -13,7 +13,7 @@ export default config({
       path: 'entities/posts/*',
       format: { contentField: 'content' },
       schema: {
-        title: fields.slug({ name: { label: 'Title' } }),
+        title: fields.slug({ name: { label: 'Title' , validation: {isRequired: true} } }),
         content: fields.markdoc({ label: 'Content' }),
       },
     }),
