@@ -1,7 +1,6 @@
 import { reader } from '../reader';
 import { PostPreview } from '../../components/post-preview/post-preview';
 import { getExcerpt } from '../../utils/markdoc';
-import '../styles.css';
 
 export default async function Homepage() {
   const posts = await reader.collections.posts.all();

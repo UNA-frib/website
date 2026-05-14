@@ -41,5 +41,13 @@ export default config({
         ),
       },
     }),
+    homePage: singleton({
+      label: 'Home Page',
+      path: 'entities/home-page',
+      schema: {
+        title: fields.text({ label: 'Page Title' }),
+        content: fields.markdoc({ label: 'Content' }),
+      },
+    }),
   },
 });
