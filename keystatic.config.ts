@@ -45,7 +45,7 @@ export default config({
       label: 'Home Page',
       path: 'entities/home-page',
       schema: {
-        title: fields.text({ label: 'Page Title' }),
+        title: fields.text({ label: 'Page Title', validation: { isRequired: true } }),
         content: fields.markdoc({ label: 'Content' }),
       },
     }),

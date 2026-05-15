@@ -1,4 +1,3 @@
-import './globals.css';
 import type { ReactNode } from 'react';
 import { Urbanist } from 'next/font/google'
 
