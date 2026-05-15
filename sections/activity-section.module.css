@@ -1,0 +1,95 @@
+.sectionContainer {
+  margin: 4rem 0;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  border: 1px solid var(--primary-border);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.wheelSide {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.infoSide {
+  flex: 1 1 300px;
+  text-align: left;
+  position: relative;
+  min-height: 200px;
+}
+
+.title {
+  margin-top: 0;
+  border: none;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Info Box Base Styling */
+.infoBox {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hide all specific info boxes by default */
+.solidarityInfo,
+.culturalInfo,
+.foyerInfo,
+.languageInfo {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Show Default Info by default */
+.defaultInfo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- THE CSS :HAS() MAGIC --- */
+
+/* If the wheel has a hovered segment, hide the default info */
+.sectionContainer:has([data-activity]:hover) .defaultInfo {
+  display: none;
+}
+
+/* Show Solidarity */
+.sectionContainer:has([data-activity="solidarity"]:hover) .solidarityInfo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Show Cultural */
+.sectionContainer:has([data-activity="cultural"]:hover) .culturalInfo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Show Foyer */
+.sectionContainer:has([data-activity="foyer"]:hover) .foyerInfo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Show Language */
+.sectionContainer:has([data-activity="language"]:hover) .languageInfo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}

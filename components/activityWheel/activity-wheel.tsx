@@ -1,16 +1,10 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './activity-wheel.module.css';
 
 type Activity = {
   id: string;
   label: string;
   color: string;
-};
-
-type ActivityWheelProps = {
-  onHover?: (activityId: string | null) => void;
 };
 
 const activities: Activity[] = [
@@ -44,29 +38,12 @@ function getDonutPath(x: number, y: number, radius: number, innerRadius: number,
   ].join(" ");
 }
 
-export function ActivityWheel({ onHover }: ActivityWheelProps) {
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
-
-  const handleMouseEnter = (id: string) => {
-    setHoveredId(id);
-    if (onHover) onHover(id);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredId(null);
-    if (onHover) onHover(null);
-  };
-
+export function ActivityWheel() {
   const centerX = 100;
   const centerY = 100;
   const outerRadius = 95;
   const innerRadius = 45;
 
-  // Angles for quadrants
-  // Top-Right: 0 to 90
-  // Bottom-Right: 90 to 180
-  // Bottom-Left: 180 to 270
-  // Top-Left: 270 to 360
   const angles = [
     { start: 270, end: 360 }, // Top-Left: Solidarity
     { start: 0, end: 90 },    // Top-Right: Cultural
@@ -80,8 +57,6 @@ export function ActivityWheel({ onHover }: ActivityWheelProps) {
         {activities.map((activity, index) => {
           const { start, end } = angles[index];
           const path = getDonutPath(centerX, centerY, outerRadius, innerRadius, start, end);
-          
-          // Calculate text position (middle of the arc)
           const midAngle = (start + end) / 2;
           const textPos = polarToCartesian(centerX, centerY, (outerRadius + innerRadius) / 2, midAngle);
 
@@ -89,9 +64,7 @@ export function ActivityWheel({ onHover }: ActivityWheelProps) {
             <g 
               key={activity.id}
               className={styles.segment}
-              onMouseEnter={() => handleMouseEnter(activity.id)}
-              onMouseLeave={handleMouseLeave}
-              style={{ opacity: hoveredId && hoveredId !== activity.id ? 0.6 : 1 }}
+              data-activity={activity.id}
             >
               <path 
                 d={path} 
@@ -107,7 +80,7 @@ export function ActivityWheel({ onHover }: ActivityWheelProps) {
             </g>
           );
         })}
-        {/* Center Circle */}
+        
         <circle cx={centerX} cy={centerY} r={innerRadius - 2} className={styles.centerCircle} />
         <text x={centerX} y={centerY} className={styles.centerText}>
           <tspan x={centerX} dy="-0.2em">Nos</tspan>
