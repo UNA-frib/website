@@ -1,6 +1,6 @@
 import { reader } from '../reader';
-import { PostPreview } from '../../components/post-preview/post-preview';
 import { getExcerpt } from '../../utils/markdoc';
+import { ActivitySection } from '../../sections/activity-section';
 
 export default async function Homepage() {
   const posts = await reader.collections.posts.all();
@@ -20,6 +20,8 @@ export default async function Homepage() {
 
   return (
     <div>
+      <ActivitySection />
+      
       <h1>Keystatic ⚡️</h1>
       <p>This homepage shows how to load a collection from the reader API.</p>
       <p>

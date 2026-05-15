@@ -1,0 +1,41 @@
+.wheelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.segment {
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: saturate(0.8) brightness(1.1);
+}
+
+.segment:hover {
+  filter: saturate(1.2) brightness(1);
+}
+
+.segmentLabel {
+  pointer-events: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  fill: #2d3748;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 8px;
+}
+
+.centerText {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  fill: #2d3748;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 10px;
+}
+
+.centerCircle {
+  fill: white;
+}
